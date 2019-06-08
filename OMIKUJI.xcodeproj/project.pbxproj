@@ -12,6 +12,8 @@
 		C7BD933F22AB748900D7DF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BD933D22AB748900D7DF79 /* Main.storyboard */; };
 		C7BD934122AB748A00D7DF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7BD934022AB748A00D7DF79 /* Assets.xcassets */; };
 		C7BD934422AB748A00D7DF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BD934222AB748A00D7DF79 /* LaunchScreen.storyboard */; };
+		C7BD934D22ABA35E00D7DF79 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C7BD934B22ABA35E00D7DF79 /* bell.mp3 */; };
+		C7BD934E22ABA35E00D7DF79 /* drum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C7BD934C22ABA35E00D7DF79 /* drum.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C7BD934022AB748A00D7DF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7BD934322AB748A00D7DF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7BD934522AB748A00D7DF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7BD934B22ABA35E00D7DF79 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		C7BD934C22ABA35E00D7DF79 /* drum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				C7BD933922AB748900D7DF79 /* AppDelegate.swift */,
 				C7BD933B22AB748900D7DF79 /* ViewController.swift */,
+				C7BD934B22ABA35E00D7DF79 /* bell.mp3 */,
+				C7BD934C22ABA35E00D7DF79 /* drum.mp3 */,
 				C7BD933D22AB748900D7DF79 /* Main.storyboard */,
 				C7BD934022AB748A00D7DF79 /* Assets.xcassets */,
 				C7BD934222AB748A00D7DF79 /* LaunchScreen.storyboard */,
@@ -123,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7BD934422AB748A00D7DF79 /* LaunchScreen.storyboard in Resources */,
+				C7BD934E22ABA35E00D7DF79 /* drum.mp3 in Resources */,
+				C7BD934D22ABA35E00D7DF79 /* bell.mp3 in Resources */,
 				C7BD934122AB748A00D7DF79 /* Assets.xcassets in Resources */,
 				C7BD933F22AB748900D7DF79 /* Main.storyboard in Resources */,
 			);
