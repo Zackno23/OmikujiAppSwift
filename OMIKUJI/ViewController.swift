@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+var shakable = true
 
 
 class ViewController: UIViewController {
@@ -43,23 +44,30 @@ class ViewController: UIViewController {
             //return
             return
         }
-        setupSound(soundName: "bell")
-        resultAudioPlayer.play()
-        let resultNum = Int( arc4random_uniform(UInt32(resultTexts.count)) )
-        stickLabel.text = resultTexts[resultNum]
+        if shakable{
+            setupSound(soundName: "bell")
+            resultAudioPlayer.play()
+            let resultNum = Int( arc4random_uniform(UInt32(resultTexts.count)) )
+            stickLabel.text = resultTexts[resultNum]
+            
+            //一秒の間にアニメーション
+            //もし必要ならいい感じでアニメーションするよ
+            //アニメーションしたあとの処理はcompletion
+            stickBottomMargin.constant = stickHeight.constant * -1
+            UIView.animate(withDuration: 1, animations: {
+                self.view.layoutIfNeeded()
+            },completion:{(finished: Bool) in
+                self.bigLabel.text = self.stickLabel.text
+                self.overView.isHidden = false
+                self.setupSound(soundName: "drum")
+                self.resultAudioPlayer.play()
+                shakable = true
+            })
+            
+        }else{
+            
+        }
         
-        //一秒の間にアニメーション
-        //もし必要ならいい感じでアニメーションするよ
-        //アニメーションしたあとの処理はcompletion
-        stickBottomMargin.constant = stickHeight.constant * -1
-        UIView.animate(withDuration: 1, animations: {
-            self.view.layoutIfNeeded()
-        },completion:{(finished: Bool) in
-            self.bigLabel.text = self.stickLabel.text
-            self.overView.isHidden = false
-            self.setupSound(soundName: "drum")
-            self.resultAudioPlayer.play()
-        })
     }
     
     @IBAction func tapRetryButton(_ sender: Any) {
