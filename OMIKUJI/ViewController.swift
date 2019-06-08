@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSound()
+        
         // Do any additional setup after loading the view.
     }
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -43,6 +43,8 @@ class ViewController: UIViewController {
             //return
             return
         }
+        setupSound(soundName: "bell")
+        resultAudioPlayer.play()
         let resultNum = Int( arc4random_uniform(UInt32(resultTexts.count)) )
         stickLabel.text = resultTexts[resultNum]
         
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
         },completion:{(finished: Bool) in
             self.bigLabel.text = self.stickLabel.text
             self.overView.isHidden = false
+            self.setupSound(soundName: "drum")
             self.resultAudioPlayer.play()
         })
     }
@@ -63,8 +66,8 @@ class ViewController: UIViewController {
         overView.isHidden = true
         stickBottomMargin.constant = 0
     }
-    func setupSound(){
-        if let sound = Bundle.main.path(forResource:"drum", ofType:".mp3"){
+    func setupSound(soundName:String){
+        if let sound = Bundle.main.path(forResource:soundName, ofType:".mp3"){
             //try! 例外処理
             //
             resultAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
