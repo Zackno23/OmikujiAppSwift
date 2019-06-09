@@ -45,6 +45,7 @@ class ViewController: UIViewController {
             return
         }
         if shakable{
+            
             setupSound(soundName: "bell")
             resultAudioPlayer.play()
             let resultNum = Int( arc4random_uniform(UInt32(resultTexts.count)) )
@@ -83,7 +84,6 @@ class ViewController: UIViewController {
     }
     }
 }
-
 
 
 
